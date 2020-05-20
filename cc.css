@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* the check box button style */
+.checkbox{
+    position: fixed;
+    top: 30px;
+    right: 50px;
+    appearance: none;
+    -webkit-appearance : none;
+    -moz-appearance : none;
+    -o-appearance : none;
+    width: 80px;
+    height: 40px;
+    background: black;
+    border-radius: 22px;
+    cursor: pointer;
+    outline: none;
+}
+/* checkbox button functionality when you click on it it chnges it's background to lightblue*/
+.checkbox:checked{
+    background: lightblue;
+}
+/* the item of the checkbox btn */
+.checkbox::before{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 35px;
+    background-color:white;
+    border-radius: 35px;
+    top: 2px;
+    left: 2px;
+    cursor: pointer;
+    transition: .3s linear;
+}
+/* he item of the checkbox btn when you click on it it mooves and changes it's background color */
+.checkbox:checked::before{
+    left: 40px;
+    background: rgb(83, 144, 235);
+    
+}
+/* when you click on the checkbox button the section background color changes also */
+.checkbox:checked + .section{
+    background: rgb(145, 142, 142);
+}
+.section{
+    width: 100%;
+    height: 600px;
+    background: white;
+    display: flex;
+    transition: .4s ease;
+}
+.des{
+    display: flex;
+    flex-direction: row;
+}
+h1{
+    text-align: center;
+    font-family: "Radens" ,sans-serif;
+    font-size: 59px;
+    font-weight: 900;
+    margin-top: 20px;
+    color: black;
+}
+
+img{
+    width: 100%;
+    height: 300px ;
+    margin: 20px;
+}
+p{
+    margin-top: 50px;
+    letter-spacing: 1px;
+    padding: 20px;
+}
+/* media queries for the responsiveness */
+@media (max-width:900px){
+    .section{
+        height: 100vh;
+    }
+    h1{
+        margin-top: 70px;
+    }
+    img{
+        position: absolute;
+        left: -20px;
+        
+    }
+    .des{
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;   
+    }
+    p{
+        padding-top: 300px;
+    }
+}
+@media (max-width:500px){
+    p{
+        padding-top: 300px;
+    }
+}
